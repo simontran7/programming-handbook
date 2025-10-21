@@ -298,7 +298,8 @@ $$
 | sign = any | exponent = 00000000 | fraction != 000...0 |
 ```
 
-> **Note:** $+\infty$ and $-\infty$, $+0$ and $-0$ are not interchangeable!
+> **Note**\
+> $+\infty$ and $-\infty$, $+0$ and $-0$ are not interchangeable!
 
 ### Converting Decimal to IEEE 754
 
