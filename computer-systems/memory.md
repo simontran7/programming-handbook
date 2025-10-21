@@ -8,9 +8,10 @@ Memory hierarchy is typically divided into two broad categories:
 - **Primary storage**: Devices the CPU can access directly using its instruction set, including registers, caches, and main memory. These devices are **volatile**, meaning they do _not_ retain data when power is lost.
 - **Secondary storage**: Devices that the CPU cannot access directly, requiring data to first be copied into primary storage before the CPU can operate on it. These devices are **persistent** or **non-volatile**, meaning they retain data when there are power outages.
 
-Performance is evaluated primarily along two dimensions:
-- **Memory access latency**: the time required for a device to deliver requested data after being instructed to do so, measured in time units (nanoseconds, milliseconds) or CPU cycles
-- **Memory bandwidth** (or **throughput**): the amount of data that can be transferred between the device and main memory per unit time, typically measured in bytes per second.
+Performance is evaluated primarily along three dimensions:
+- **Memory Latency**: the time required for a device to deliver requested data after being instructed to do so, measured in time units (nanoseconds, milliseconds) or CPU cycles
+- **Memory Throughput**: the amount of data that can be transferred between the device and main memory per unit time, typically measured in bytes per second.
+- **Memory Bandwidth**: The upper bound on the amount of data that can be read per unit time, typically measured in bytes per second.
 
 These two metrics are influenced by two key factors:
 - The distance from the CPU plays a crucial role, as devices closer to the CPU's processing units can deliver data more quickly.
