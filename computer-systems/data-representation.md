@@ -204,6 +204,7 @@ To represent a number using two's complement:
 ### IEE 754 Structure
 
 For some number $x$:
+
 $$
 x = (-1)^\text{sign} \times (\text{integer}.\text{fraction})_2 \times 2^\text{actual exponent}
 $$
@@ -230,7 +231,7 @@ $$
 ### Fields
 
 - **Signed field**: Represents the positivity, either 0 (for positive) or 1 (for negative).
-- **Biased exponent field**: Determines the power of 2 by which to scale the fraction. The exponent is biased, meaning we add a constant to the actual exponent.
+- **Biased exponent field**: Determines the power of 2 by which to scale the fraction. The exponent is biased, meaning we add a constant to the actual exponent. The general formula is $2^{\text{bits allocated for biased exponent} - 1} - 1$.
     - Single precision bias: $2^{8 - 1} - 1 = (127)_{10} $
     - Double precision bias: $2^{11 - 1} - 1_{10} = (1023)_{10}$
     - Quadruple precision bias: $2^{15 - 1} - 1 = (16383)_{10}$
@@ -252,21 +253,17 @@ $$
 
 #### $+\infty$ and $-\infty$
 
-**Infinity ($\infty$)** is the result when calculations exceed the representable range (overflow) or a non-zero value is divided by zero. It's a useful value since it allows programs to continue running with meaningful results rather than crashing on overflow.
-
 ```
 | sign = any | exponent = 11111111 | fraction = 000...0 |
 ```
 
 #### NaN
 
-**Not a Number ($\text{NaN}$)**, is a value that represents mathematically undefined results.
-
-It has some key properties:
+Key properties:
 - Any operation with $\text{NaN}$ produces $\text{NaN}$
 - $\text{NaN}$ is never equal to anything, including itself
 
-There are also two types of $\text{NaN}$:
+Types of $\text{NaN}$:
 - Quiet $\text{NaN}$: silently propagates $\text{NaN}$ through calculations
 - Signalling $\text{NaN}$: triggers an exception or error when encountered in operations
 
